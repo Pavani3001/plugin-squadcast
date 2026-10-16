@@ -44,5 +44,10 @@ class SquadcastExecutionTest extends AbstractSquadcaseTest {
         assertThat(receivedData, containsString("[io.kestra.tests] main-flow-that-fails"));
         assertThat(receivedData, containsString("Failed on task `failed`"));
         assertThat(receivedData, containsString("Kestra Squadcast alert"));
+        assertThat(receivedData, containsString("Message with \\\"quoted\\\" text"));
+        assertThat(receivedData, containsString("environment"));
+        assertThat(receivedData, containsString("test"));
+        assertThat(receivedData, containsString("service"));
+        assertThat(receivedData, containsString("squadcast"));
     }
 }

@@ -18,7 +18,7 @@
 {% endfor %}
         },
 {% endif %}
-     "description": "{{ title(link, execution) }}\nFinal task ID: {{lastTask.taskId}}\nStatus: {% if firstFailed == false %}Succeeded{% else %}Failed on task `{{firstFailed.taskId}}`{% endif %}\nDuration: {{duration}}"
+     "description": "{{ title(link, execution) }}\nFinal task ID: {{lastTask.taskId}}\nStatus: {% if firstFailed == false %}Succeeded{% else %}Failed on task `{{firstFailed.taskId}}`{% endif %}\nDuration: {{duration}}{% if customMessage is defined %}\nMessage: {{ customMessage | escapeChar('double') }}{% endif %}{% if customFields is defined and customFields is not empty %}{% for entry in customFields %}\n{{ entry.key | escapeChar('double') }}: {{ entry.value | escapeChar('double') }}{% endfor %}{% endif %}"
 {% if eventId is defined %}
     ,"event_id": "{{eventId}}"
 {% endif %}

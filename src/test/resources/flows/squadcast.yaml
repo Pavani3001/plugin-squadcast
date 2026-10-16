@@ -13,6 +13,10 @@ tasks:
     message: "Kestra Squadcast alert"
     executionId: "{{trigger.executionId}}"
     priority: P1
+    customMessage: 'Message with "quoted" text'
+    customFields:
+      environment: "test"
+      service: "squadcast"
 
 triggers:
   - id: on_failure
